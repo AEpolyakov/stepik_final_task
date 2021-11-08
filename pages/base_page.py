@@ -36,6 +36,10 @@ class BasePage:
     def is_login_page(self):
         assert "login" in self.browser.current_url, 'current page is not login page'
 
+    def go_to_basket(self):
+        basket_link = self.browser.find_element(*BasePageLocators.BASKET_LINK)
+        basket_link.click()
+
     def go_to_login_page(self):
         link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
         link.click()
