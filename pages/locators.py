@@ -6,8 +6,11 @@ class MainPageLocators:
 
 
 class LoginPageLocators:
-    LOGIN_URL = (1, 1)
-    LOGIN_FORM = (1, 1)
-    REGISTER_FORM = (1, 1)
+    LOGIN_FORM = (By.ID, 'login_form')
+    REGISTER_FORM = (By.ID, 'register_form')
 
 
+class ProductPageLocators:
+    ADD_TO_BASKET_BUTTON = (By.XPATH, '//form[@id="add_to_basket_form"]/button')
+    PRODUCT_NAME = (By.XPATH, '//div[@class="col-sm-6 product_main"]/h1')
+    PRODUCT_NAME_IN_MESSAGES = (By.XPATH, '//div[text()[contains(., "has been added to your basket")]]')
