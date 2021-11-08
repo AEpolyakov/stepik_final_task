@@ -30,7 +30,6 @@ class ProductPageLocators:
 
 
 class BasketPageLocators:
-    # BASKET_IS_EMPTY_MESSAGE = (By.CSS_SELECTOR, '.page_inner .content')
     BASKET_IS_EMPTY_MESSAGE = (By.XPATH, '//div[@id="content_inner"]/p')
     PRODUCTS = (By.XPATH, '//div[@class="basket-items"]')
 

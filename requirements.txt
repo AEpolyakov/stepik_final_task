@@ -1,7 +1,9 @@
 async-generator==1.10
+atomicwrites==1.4.0
 attrs==21.2.0
 certifi==2021.10.8
 cffi==1.15.0
+colorama==0.4.4
 cryptography==35.0.0
 h11==0.12.0
 idna==3.3
