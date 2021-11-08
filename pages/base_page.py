@@ -11,6 +11,9 @@ class BasePage:
         self.url = url
         self.browser.implicitly_wait(timeout)
 
+    def button_click(self, how, what):
+        self.browser.find_element(how, what).click()
+
     def is_element_present(self, how, what):
         try:
             self.browser.find_element(how, what)
@@ -36,6 +39,9 @@ class BasePage:
     def is_login_page(self):
         assert "login" in self.browser.current_url, 'current page is not login page'
 
+    def should_be_authorized(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), 'user is unauthorized'
+
     def go_to_basket(self):
         basket_link = self.browser.find_element(*BasePageLocators.BASKET_LINK)
         basket_link.click()
@@ -46,6 +52,9 @@ class BasePage:
 
     def open(self):
         self.browser.get(self.url)
+
+    def send_keys_to_element(self, keys, how, what):
+        self.browser.find_element(how, what).send_keys(keys)
 
     def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
