@@ -14,3 +14,4 @@ class ProductPageLocators:
     ADD_TO_BASKET_BUTTON = (By.XPATH, '//form[@id="add_to_basket_form"]/button')
     PRODUCT_NAME = (By.XPATH, '//div[@class="col-sm-6 product_main"]/h1')
     PRODUCT_NAME_IN_MESSAGES = (By.XPATH, '//div[@class="alert alert-safe alert-noicon alert-success  fade in"]//strong')
+    SUCCESS_MESSAGE = (By.XPATH, '//div[@class="alert alert-safe alert-noicon alert-success  fade in"]')
