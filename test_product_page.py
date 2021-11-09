@@ -4,6 +4,9 @@ from .pages.product_page import ProductPage
 from .pages.basket_page import BasketPage
 from .pages.login_page import LoginPage
 
+link_visible = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0'
+link_login = "http://selenium1py.pythonanywhere.com/catalogue/the-city-and-the-stars_95/"
+
 
 @pytest.mark.registered
 class TestUserAddToBasketFromProductPage:
@@ -40,9 +43,6 @@ def test_guest_can_add_product_to_basket(browser, link):
     page.add_product_to_basket()
 
 
-link_visible = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0'
-
-
 @pytest.mark.xfail
 def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
     page = ProductPage(browser, link_visible)
@@ -53,13 +53,10 @@ def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
 
 @pytest.mark.xfail
 def test_message_disappeared_after_adding_product_to_basket(browser):
-    page = ProductPage(browser, link_visibile)
+    page = ProductPage(browser, link_visible)
     page.open()
     page.add_product_to_basket()
     page.is_disappear_success()
-
-
-link_login = "http://selenium1py.pythonanywhere.com/catalogue/the-city-and-the-stars_95/"
 
 
 def test_guest_should_see_login_link_on_product_page(browser):
